@@ -1,0 +1,29 @@
+.index_main {
+  text-align: center;
+  background-color: lightgrey;
+  color: black;
+  align-items: center;
+  font-family: "Times New Roman";
+  font-size: 18px;
+}
+
+.margins {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#title_main {
+  font-family: "Dancing Script", cursive;
+  font-size: 50px;
+  padding-bottom: 40px;
+}
+
+.title_sub {
+  padding-top: 40px;
+  font-size: 30px;
+}
+
+#scroll {
+  width: 382px;
+  height: 142px;
+}

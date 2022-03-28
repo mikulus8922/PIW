@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>To Do List</h1>
+            <input type="text" id="inputBox">
+        </div>
+        <div class="column">
+            <h3> 
+                High Priority 
+                <button type="button" onclick="createNewItem('MaxPrioList')" class="addButton">Add</button>
+            </h3>
+            <ul id="MaxPrioList">
+                <li>left1</li>
+                <li class="crossedOut">left2</li>
+                <li>left3</li>
+                <li>left4</li>
+                <li>left5</li>
+                <li>left6</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3> 
+                Medium Priority 
+                <button type="button" onclick="createNewItem('MedPrioList')" class="addButton">Add</button>
+            </h3>
+            <ul id="MedPrioList">
+                <li>middle1</li>
+                <li class="crossedOut">middle2</li>
+                <li>middle3</li>
+                <li>middle4</li>
+                <li>middle5</li>
+                <li>middle6</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3> 
+                Low Priority
+                <button type="button" onclick="createNewItem('LowPrioList')" class="addButton">Add</button>
+            </h3>
+            <ul id="LowPrioList">
+                <li>right1</li>
+                <li class="crossedOut">right2</li>
+                <li>right3</li>
+                <li>right4</li>
+                <li>right5</li>
+                <li>right6</li>
+            </ul>
+        </div>
+    </body>
+    <script src="scripts.js"></script>
+</html>

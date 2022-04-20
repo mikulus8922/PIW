@@ -1,0 +1,23 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+.student-page {
+    text-align: center;
+}
+
+.navigation-bar {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 2rem;
+}
+
+.search-bar {
+    padding-top: 2rem;
+}
+

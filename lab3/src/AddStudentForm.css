@@ -1,0 +1,36 @@
+.add-student-form {
+    width: 50rem;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 2rem;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.add-div {
+    justify-content: space-between;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.add-div > input {
+    padding-right: 20rem;
+    font-size: 1rem;
+}
+
+.button-submit {
+    margin-top: 5rem;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.button-submit > button {
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+}
+

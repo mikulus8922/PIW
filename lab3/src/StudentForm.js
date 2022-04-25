@@ -9,15 +9,15 @@ function StudentForm({student}) {
               {student.description}</div>
           <div className="student-tags">
               {
-                  student.tags.map(function(name){
-                      return <div className="student-tag">{name}</div>
+                  student.tags.map(function(tag){
+                      return <div className="student-tag">{tag}</div>
                   })
               }
           </div>
           <div className="student-lessons">
                 {
-                  student.lessons.map(function(name){
-                      return <div className="student-lesson"> {name} </div>
+                  student.lessons.map(function(lesson){
+                      return <div className="student-lesson"> {lesson} </div>
                   })
               } 
           </div>

@@ -1,4 +1,4 @@
-.student-form {
+.group-form {
     width: 30rem;
     margin: auto;
     border: 1px solid;
@@ -10,14 +10,14 @@
     color: rgba(0, 0, 0, 0.75);
 }
 
-.student-name {
+.group-name {
     text-align: center;
     margin: 0.5rem;
     font-size: 2.5rem;
     display: block;
 }
 
-.student-description {
+.group-description {
     margin: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -25,7 +25,7 @@
     display: block;
 }
 
-.student-tags {
+.group-members {
     padding-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -36,7 +36,7 @@
     justify-content: space-evenly;
 }
 
-.student-lessons {
+.group-jobs {
     padding-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -47,7 +47,7 @@
     justify-content: space-evenly;
 }
 
-.student-tag {
+.group-member {
     padding: 0.2rem;
     margin: 0.1rem;
     border: 1px solid;
@@ -56,7 +56,7 @@
     outline: none;
 }
 
-.student-lesson {
+.group-job {
     padding: 0.2rem;
     margin: 0.1rem;
     border: 1px solid;

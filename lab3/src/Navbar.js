@@ -10,6 +10,8 @@ function Navbar() {
             <div className="navbar-links">
                 <NavLink to="/">Search students</NavLink>
                 <NavLink to="/addStudentForm">New student form</NavLink>
+                <NavLink to="/groupSearch">Search groups</NavLink>
+                <NavLink to="/addGroupForm">New group form</NavLink>
             </div>
         </div>
     );

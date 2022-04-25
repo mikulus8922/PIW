@@ -49,11 +49,11 @@ function AddStudentForm() {
                     <input onChange={event => setDescription(event.target.value)} />
                 </div>
                 <div className="add-div">
-                    <div>Tags (seperated by ";")</div>
+                    <div>Tags (separated by ";"):</div>
                     <input onChange={event => setTags(event.target.value)} />
                 </div>
                 <div className="add-div">
-                    <div>Lessons (seperated by ";")</div>
+                    <div>Lessons (separated by ";"):</div>
                     <input onChange={event => setLessons(event.target.value)} />
                 </div>
             </div>

@@ -1,0 +1,74 @@
+.login-page {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+}
+
+.login-column {
+    grid-area: 1/1/2/2;
+}
+
+.register-column {
+    grid-area: 1/2/2/3;
+}
+
+.login-form {
+    width: 10rem;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgba(0, 0, 0, 0.75);
+    
+}
+
+.register-form {
+    width: 10rem;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgba(0, 0, 0, 0.75);
+
+}
+
+.add-div {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.add-div > input {
+    padding-right: 3rem;
+    font-size: 1rem;
+}
+
+.button-login {
+    margin-top: 5rem;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.button-login > button {
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+}
+
+.button-register {
+    margin-top: 5rem;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.button-register > button {
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+}

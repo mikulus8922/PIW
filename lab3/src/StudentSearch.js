@@ -1,14 +1,15 @@
 import "./styles.css";
-import studentData from "./studentData.js";
+//import studentData from "./studentData.js";
 import Scroll from "./Scroll.js";
 import SearchList from "./SearchList.js";
 import { useState } from "react";
 import Navbar from "./Navbar";
 
-function StudentSearch() {
-
+function StudentSearch(props) {
+  const {setStudentData, studentData} = props;
   const [searchField, setSearchField] = useState("");
 
+  
 
   function checkList(list) {
     let isTrue = false;
@@ -35,6 +36,8 @@ function StudentSearch() {
       );
     }
   );
+
+
 
   const handleChange = e => {
     setSearchField(e.target.value);

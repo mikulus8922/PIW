@@ -1,6 +1,6 @@
 import React from "react";
 import "./AddGroupForm.css"
-import groupData from "./groupData";
+//import groupData from "./groupData";
 import Navbar from "./Navbar";
 
 
@@ -14,9 +14,8 @@ class AddGroupForm extends React.Component {
             lesson: "",
             members: "",
             emails: "",
-            jobs: ""
+            jobs: "",
         }
-
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -33,9 +32,9 @@ class AddGroupForm extends React.Component {
         if (membersSep.length > 5 || membersSep.length < 1 || membersSep.length !== emailsSep.length || membersSep.length !== jobsSep.length)
             return;
 
-        const id = groupData.length + 1;
+        const id = this.props.groupData.length + 1;
 
-        groupData.push({
+        this.props.setGroupData(this.props.groupData.concat({
             id: id,
             name: this.state.name,
             description: this.state.description,
@@ -43,7 +42,7 @@ class AddGroupForm extends React.Component {
             members: membersSep,
             emails: emailsSep,
             jobs: jobsSep
-        });
+        }));
     }
 
 
@@ -61,7 +60,7 @@ class AddGroupForm extends React.Component {
                         <input onChange={event => this.setState({description: event.target.value})} />
                     </div>
                     <div className="add-div">
-                        <div>Lessons:</div>
+                        <div>Lesson:</div>
                         <input onChange={event => this.setState({lesson: event.target.value})} />
                     </div>
                     <div className="add-div">

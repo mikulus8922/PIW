@@ -1,12 +1,12 @@
 import "./styles.css";
-import groupData from "./groupData.js";
+//import groupData from "./groupData.js";
 import Scroll from "./Scroll.js";
 import SearchGroupList from "./SearchGroupList.js";
 import { useState } from "react";
 import Navbar from "./Navbar";
 
-function GroupSearch() {
-
+function GroupSearch(props) {
+  const {setGroupData, groupData} = props;
   const [searchField, setSearchField] = useState("");
 
 

@@ -18,3 +18,9 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+.button-logout {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    text-align: right;
+}

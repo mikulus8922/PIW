@@ -1,16 +1,16 @@
 import { useState } from "react";
 import "./AddStudentForm.css"
-import studentData from "./studentData";
+//import studentData from "./studentData";
 import Navbar from "./Navbar";
 
-function AddStudentForm() {
+function AddStudentForm(props) {
+    const {setStudentData, studentData} = props;
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [description, setDescription] = useState("")
     const [tags, setTags] = useState("")
     const [lessons, setLessons] = useState("")
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -22,14 +22,14 @@ function AddStudentForm() {
 
         const id = studentData.length + 1;
 
-        studentData.push({
+        setStudentData(studentData.concat({
             id: id,
             email: email,
             name: name,
             description: description,
             tags: tagsSep,
             lessons: lessonsSep,
-        });
+        }));
     }
 
     return(

@@ -1,8 +1,9 @@
 import React from "react";
 import UserContext from "./UserContext";
+import useLocalStorage from "../Hooks/useLocalStorage";
 
 const UserProvider = ({ children }) => {
-    const[user, setUser] = React.useState({email: '', login: '', password: '', auth: false});
+    const[user, setUser] = useLocalStorage('user', {email: '', login: '', password: '', auth: false});
 
     const login = (email, login, password) => {
         setUser((user) => ({

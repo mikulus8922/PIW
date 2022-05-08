@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import React from "react";
 import Navbar from "./Navbar";
 import "./LoginPage.css"
+import { useNavigate } from "react-router-dom";
 import UserContext from "./Contexts/UserContext";
 import UserProvider from "./Contexts/UserProvider";
 
@@ -16,6 +17,7 @@ function LoginPage(props) {
     const [passwordRegister, setPasswordRegister] = useState("");
 
     const {login, register} = React.useContext(UserContext);
+    let navigate = useNavigate();
 
     function handleLoginSubmit(e) {
         e.preventDefault();
@@ -24,10 +26,10 @@ function LoginPage(props) {
         const foundUser = userData.find(user => (user.password === passwordLogin && user.username === nameLogin))
         if (foundUser != null) {
             login(foundUser.email, nameLogin, passwordLogin);
+            navigate("/studentSearch");
         }
         
     }
-
     function handleRegisterSubmit(e) {
         e.preventDefault();
 
@@ -49,12 +51,13 @@ function LoginPage(props) {
         }))
         
         login(emailRegister, nameRegister, passwordRegister);
+        navigate("/studentSearch");
     }
 
 
     return(
         <>
-        <Navbar/>
+        <div className="info-text"> Please log in</div>
         <div className="login-page">
             <div className="login-column">
                 <div className="login-form">

@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import UserContext from './Contexts/UserContext';
 import React from "react";
 
@@ -11,9 +11,11 @@ function Navbar() {
         return user.auth ? `Hello ${user.login}` : "Please log in";
     }
 
+    let navigate = useNavigate();
     function handleSubmit(e) {
         e.preventDefault();
         logout();
+        navigate("/");
     }
 
     return (

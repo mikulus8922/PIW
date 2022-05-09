@@ -1,8 +1,10 @@
+import { Link, useNavigate } from "react-router-dom";
 import "./StudentForm.css"
 
 function StudentForm({student}) {
+    let navigate = useNavigate();
     return (
-      <div className="student-form">
+      <div className="student-form" onClick={() => navigate("/studentInfo", { state: student})}>
           <div className="student-name">
               {student.name}</div>
           <div className="student-description">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./AddStudentForm.css"
 //import studentData from "./studentData";
 import Navbar from "./Navbar";
+import axios from 'axios';
 
 function AddStudentForm(props) {
     const {setStudentData, studentData} = props;
@@ -11,6 +12,7 @@ function AddStudentForm(props) {
     const [description, setDescription] = useState("")
     const [tags, setTags] = useState("")
     const [lessons, setLessons] = useState("")
+    const [imageURL, setImageURL] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -22,6 +24,13 @@ function AddStudentForm(props) {
 
         const id = studentData.length + 1;
 
+        axios.get("https://picsum.photos/200/300")
+        .then(res => {
+            const imageID = res.headers['picsum-id'];
+            setImageURL('https://picsum.photos/200/300?image=' + imageID.toString());
+        });
+
+        console.log(imageURL)
         setStudentData(studentData.concat({
             id: id,
             email: email,
@@ -29,6 +38,7 @@ function AddStudentForm(props) {
             description: description,
             tags: tagsSep,
             lessons: lessonsSep,
+            imageURL: imageURL
         }));
     }
 

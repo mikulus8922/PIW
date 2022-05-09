@@ -9,6 +9,7 @@ import axios from 'axios';
 import LoginPage from './LoginPage';
 import UserContext from './Contexts/UserContext';
 import UserProvider from './Contexts/UserProvider';
+import StudentInfo from './StudentInfo';
 
 function App() {
     const [userData, setUserData] = useState([]);
@@ -61,6 +62,9 @@ function App() {
                 </Route>
 
                 <Route path="/addGroupForm" element={<AddGroupForm groupData={groupData} setGroupData={setGroupData}/>}>
+                </Route>
+
+                <Route path="/studentInfo" element={<StudentInfo />}>
                 </Route>
             </Routes>
         </Router>

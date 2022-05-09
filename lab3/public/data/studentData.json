@@ -5,7 +5,8 @@
         "name": "Jacob",
         "description": "short description",
         "tags": ["tag1", "tag2", "tag3"],
-        "lessons": ["lesson1"]
+        "lessons": ["lesson1"],
+        "imageURL": "https://i.picsum.photos/id/43/200/300.jpg?hmac=F_cVhLISpNmZ9wjirHfMJgX9rQzMYJbJE1xzfwmV36c"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "name": "Oliver",
         "description": "long description long description long description long description long description long description long description long description long description",
         "tags": ["tag1", "tag2", "tag3"],
-        "lessons": ["lesson1", "lesson2"]
+        "lessons": ["lesson1", "lesson2"],
+        "imageURL": "https://i.picsum.photos/id/960/200/300.jpg?hmac=lMLI27rQoFOVbWUEFQBILnVA_jFYw2b8KHACIGkDLD4"
     },
     {
         "id": 3,
@@ -21,6 +23,7 @@
         "name": "Elijah",
         "description": "description3",
         "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6"],
-        "lessons": ["lesson1", "lesson2", "lesson3", "lesson4", "lesson5", "lesson6", "lesson7", "lesson8", "lesson9", "lesson10"]
+        "lessons": ["lesson1", "lesson2", "lesson3", "lesson4", "lesson5", "lesson6", "lesson7", "lesson8", "lesson9", "lesson10"],
+        "imageURL": "https://i.picsum.photos/id/57/200/300.jpg?hmac=l908G1qVr4r7dP947-tak2mY8Vvic_vEYzCXUCKKskY"
     }
 ]

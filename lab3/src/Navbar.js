@@ -4,14 +4,15 @@ import UserContext from './Contexts/UserContext';
 import React from "react";
 
 function Navbar() {
-
+    let navigate = useNavigate();
     const { user, logout } = React.useContext(UserContext);
     function greetingText() {
-
-        return user.auth ? `Hello ${user.login}` : "Please log in";
+        if (!user.auth)
+            navigate("/");
+        return `Hello ${user.login}`;
     }
 
-    let navigate = useNavigate();
+    
     function handleSubmit(e) {
         e.preventDefault();
         logout();

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AddStudentForm.css"
 //import studentData from "./studentData";
 import Navbar from "./Navbar";
@@ -14,6 +14,15 @@ function AddStudentForm(props) {
     const [lessons, setLessons] = useState("")
     const [imageURL, setImageURL] = useState("")
 
+    useEffect(() => {
+        axios.get("https://picsum.photos/200/300")
+        .then(res => {
+            const imageID = res.headers['picsum-id'];
+            setImageURL('https://picsum.photos/200/300?image=' + imageID);
+        });
+    })
+
+
     function handleSubmit(e) {
         e.preventDefault();
         if (name === '' || email === '')
@@ -24,13 +33,9 @@ function AddStudentForm(props) {
 
         const id = studentData.length + 1;
 
-        axios.get("https://picsum.photos/200/300")
-        .then(res => {
-            const imageID = res.headers['picsum-id'];
-            setImageURL('https://picsum.photos/200/300?image=' + imageID.toString());
-        });
-
-        console.log(imageURL)
+    
+            
+            
         setStudentData(studentData.concat({
             id: id,
             email: email,
@@ -40,6 +45,7 @@ function AddStudentForm(props) {
             lessons: lessonsSep,
             imageURL: imageURL
         }));
+
     }
 
     return(

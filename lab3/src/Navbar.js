@@ -2,21 +2,65 @@ import "./Navbar.css"
 import { NavLink, useNavigate } from "react-router-dom";
 import UserContext from './Contexts/UserContext';
 import React from "react";
+import { logout } from './firebase/auth'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from './firebase/init'
 
 function Navbar() {
     let navigate = useNavigate();
-    const { user, logout } = React.useContext(UserContext);
+    const { user, logoutN } = React.useContext(UserContext);
+    let [userG , xd ,xd2] = useAuthState(auth);
+
+    console.log(userG, xd, xd2);
     function greetingText() {
         if (!user.auth)
             navigate("/");
-        return `Hello ${user.login}`;
+        
+        let name = '';
+        try {
+            if (user.login !== null && user.login !== '') {
+                name = user.login;
+            }
+        } catch {
+
+        }
+        try {
+            if (userG.displayName !== null && userG.displayName !== '') {
+                name = userG.displayName;
+                user = ''
+            }
+                
+        } catch {
+
+        }
+        try {
+            if (userG.username != null && userG.username != '') {
+                name = userG.username;
+                user = ''
+            }
+                
+        } catch {
+
+        }
+
+
+        return `Hello ${name}`;
     }
 
     
     function handleSubmit(e) {
         e.preventDefault();
-        logout();
-        navigate("/");
+        try {
+            logout();
+        } catch {
+
+        };
+        try {
+            logoutN();
+        } catch {
+
+        };
+        navigate('/');
     }
 
     return (

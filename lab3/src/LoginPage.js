@@ -5,6 +5,8 @@ import "./LoginPage.css"
 import { useNavigate } from "react-router-dom";
 import UserContext from "./Contexts/UserContext";
 import UserProvider from "./Contexts/UserProvider";
+import LoginWithGoogle from "./LoginWithGoogle";
+import LoginWithGithub from "./LoginWithGithub";
 
 function LoginPage(props) {
     const {setUserData, userData} = props;
@@ -57,7 +59,9 @@ function LoginPage(props) {
 
     return(
         <>
-        <div className="info-text"> Please log in</div>
+        <div className="info-text"> Please log in
+        <LoginWithGoogle/>
+        <LoginWithGithub/></div>
         <div className="login-page">
             <div className="login-column">
                 <div className="login-form">

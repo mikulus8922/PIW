@@ -7,6 +7,15 @@ import UserContext from "./Contexts/UserContext";
 import UserProvider from "./Contexts/UserProvider";
 import LoginWithGoogle from "./LoginWithGoogle";
 import LoginWithGithub from "./LoginWithGithub";
+import { auth } from "./firebase/init";
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
+} from "firebase/auth";
+import { async } from "@firebase/util";
+
+
+
 
 function LoginPage(props) {
     const {setUserData, userData} = props;
@@ -19,7 +28,44 @@ function LoginPage(props) {
     const [passwordRegister, setPasswordRegister] = useState("");
 
     const {login, register} = React.useContext(UserContext);
+
+    
     let navigate = useNavigate();
+
+
+    const signInWithEmail = async (email, password) => {
+        console.log(email, password);
+        const userCredential = await createUserWithEmailAndPassword
+        (auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(email, password);
+          navigate("/studentSearch");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+    }
+
+
+
+    const logInWithEmail = async (email, password) => {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          navigate("/studentSearch");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }
+
+
 
     function handleLoginSubmit(e) {
         e.preventDefault();
@@ -56,12 +102,33 @@ function LoginPage(props) {
         navigate("/studentSearch");
     }
 
+    function signInWithMail(e) {
+        e.preventDefault();
+
+        if (emailRegister === '' || passwordRegister === '')
+            return;
+
+        signInWithEmail(emailRegister, passwordRegister);
+        
+    }
+
+
+    function loginWithMail(e) {
+        e.preventDefault();
+
+        if (emailRegister === '' || passwordRegister === '')
+            return;
+
+        logInWithEmail(emailRegister, passwordRegister);
+    }
+
 
     return(
         <>
         <div className="info-text"> Please log in
         <LoginWithGoogle/>
-        <LoginWithGithub/></div>
+        <LoginWithGithub/>
+        </div>
         <div className="login-page">
             <div className="login-column">
                 <div className="login-form">
@@ -98,6 +165,14 @@ function LoginPage(props) {
 
                 <form className="button-register" onSubmit={handleRegisterSubmit}>
                     <button type="submit">Register</button>
+                </form>
+
+                <form className="button-login" onSubmit={signInWithMail}>
+                    <button type="submit">register with mail/password</button>
+                </form>
+
+                <form className="button-login" onSubmit={loginWithMail}>
+                    <button type="submit">login with mail/password</button>
                 </form>
             </div>
 

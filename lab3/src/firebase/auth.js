@@ -4,6 +4,7 @@ import {
     GithubAuthProvider,
     signInWithPopup,
     signOut,
+    signInWithEmailAndPassword,
 } from "firebase/auth";
 
 
@@ -35,6 +36,8 @@ export const logInWithGithub = async () => {
 export const logout = () => {
     signOut(auth);
 };
+
+
 
 
 

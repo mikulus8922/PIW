@@ -42,6 +42,16 @@ function Navbar() {
         } catch {
 
         }
+        try {
+            if (userG.email != null && userG.email != '') {
+                name = userG.email;
+                user = ''
+            }
+                
+        } catch {
+
+        }
+
 
 
         return `Hello ${name}`;
